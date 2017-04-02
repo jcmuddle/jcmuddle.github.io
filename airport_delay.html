@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Load the d3.js library -->
+    <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+    <!-- Load the script.js library -->
+    <script type="text/javascript" src="js/script_final.js"></script>
+    <style>
+      h2 {
+      text-align: center;
+      color: black;
+      }
+      circle {
+        stroke: black;
+        stroke-width: 0.7;
+        opacity: 0.8;
+      }
+      
+      div.months_buttons {
+        position: fixed;
+        top: 5px;
+        left: 50px;
+      }
+
+      div.months_buttons div {
+        background-color: rgb(251, 201, 127);
+        padding: 3px;
+        margin: 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+      Use d3 to load the data file
+      */
+      d3.json("data/gz_2010_us_040_00_20m.json", draw);
+    </script>
+  </body>
+</html>
