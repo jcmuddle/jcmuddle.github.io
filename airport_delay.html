@@ -1,38 +1,49 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <!-- Load the d3.js library -->
-    <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
-    <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
-    <!-- Load the script.js library -->
+    <style type="text/css">
+      header, footer {
+        padding: 1em;
+        color:#1f78b4;
+        background-color:  white;
+        clear: left;
+        text-align: center;
+      }
+      #chartContainer {
+        text-align: center;
+      }
+      article {
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 1em;
+    overflow: hidden;
+}
+  </style>
+</head>
+<body>
+<header>
 
-    <style>
-      h2 {
-      text-align: center;
-      color: black;
-      }
-      circle {
-        stroke: black;
-        stroke-width: 0.7;
-        opacity: 0.8;
-      }
-      
-      div.months_buttons {
-        position: fixed;
-        top: 5px;
-        left: 50px;
-      }
+<h1> Average Monthly Departure Delays vs Total Number of Flights: <br>
+Top 10 Busiest US Airports</h1>
+</header>
+<article class="article">
+  <h2>Depature Delays</h2>
+We all get frustrated when we are delayed at the airport, in the lounge, boarding or, worst of all, sat on the tarmac.
+The visulisation below looks at departure delays at the ten busiest long/medium-haul (180 minutes+) airports in 2008 by total number of departures.
+The scatter plot on the left indicates the average monthly departure delay against the total number of departures that month. Right-hand plot indicates the current month and National average delay for that month.
+</article>
 
-      div.months_buttons div {
-        background-color: rgb(251, 201, 127);
-        padding: 3px;
-        margin: 7px;
-      }
-    </style>
-  </head>
-  <body>
-    <div id=chartContainer></div>
-    <script type="text/javascript" src="js/script_final.js"></script>
-  </body>
+<div id="chartContainer">
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.2.0.min.js"></script>
+  <script src="js/script_final.js"></script>
+</div>
+<article>
+<h3>Worst Airports</h3>
+Two of the worst performing airports, throughout the year, are Chicago O'Hare and Newark Liberty International. For every month they are in the top 5 and for the worst month nationally (December) they are the worst. December is obviously an important holiday time, which effects all airports, but it is also the time of year for cold weather. In the North you would expect the majority of airports to have to perform deicing at this time of year. Three of the four northern airports perform the worst with JFK performing relatively well. You can use the legend to select a subset of airports.
+<h3>Worst Months</h3>
+As alluded to above, December is the worst month for depature delays across the US. The next is June, which is the start of the summer holidays. Both holiday periods will experience an increase in passengers who travel less frequently. This could be resonsible for some of the depature delays.
+<h3>Is the size of the airport important?</h3>
+All of these airports are major destinations for long-haul flights, but there does not appear to be a correlation between the number of flights and the depature delay. There is also far more variability in the depature delays than in the number of flights.
+</article>
+</body>
 </html>
